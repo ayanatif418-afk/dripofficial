@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products — DRIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Space+Mono:wght@400;700&family=Cinzel:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- PILL SHAPED NAVIGATION -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-content">
+            <!-- LEFT: MENU TRIGGER -->
+            <button class="menu-trigger" id="menuBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>MENU</span>
+            </button>
+
+            <!-- CENTER: LOGO -->
+            <a href="index.html" class="logo">
+                <img src="driplogo.png" alt="DRIP">
+            </a>
+
+            <!-- RIGHT: ICONS -->
+            <div class="nav-actions">
+                <button class="nav-icon" id="searchBtn" aria-label="Search">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="nav-icon" id="cartBtn" aria-label="My Vault">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-menu" id="closeMenu" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="menu-links">
+            <a href="index.html" class="menu-link" data-text="HOME">HOME</a>
+            <a href="products.html" class="menu-link" data-text="THE VAULT">THE VAULT</a>
+            <a href="about.html" class="menu-link" data-text="THE CRAFT">THE CRAFT</a>
+            <a href="contact.html" class="menu-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="menu-footer">
+            <p>EST. 2026 — KARACHI</p>
+        </div>
+    </div>
+
+    <!-- CART DROPDOWN -->
+    <div id="cartDropdown" class="cart-dropdown">
+        <div class="cart-header">
+            <h3>MY VAULT</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your vault is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>TOTAL:</span>
+                <span id="cartTotal">Rs. 0</span>
+            </div>
+            <button class="btn-primary" id="checkoutBtn">PROCEED TO CHECKOUT</button>
+            <button class="btn-secondary" id="whatsappCheckout">WHATSAPP CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- PRODUCTS PAGE -->
+    <div class="products-page">
+        <div class="page-header">
+            <h1>THE MANIFEST FLOOR</h1>
+            <p class="product-count" id="productCount">Showing 12 Products</p>
+        </div>
+
+        <div class="products-layout">
+            <!-- LEFT FILTER PANEL -->
+            <aside class="filter-panel">
+                <div class="filter-header">
+                    <h3>FILTERS</h3>
+                    <button class="clear-filters" id="clearFilters">Clear All</button>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>COLLECTION</span>
+                        <span class="toggle-icon">−</span>
+                    </button>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="new-drops">
+                            <span>New Drops</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="essentials">
+                            <span>Essentials</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="collection" value="archive">
+                            <span>The Archive</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>WEIGHT</span>
+                        <span class="toggle-icon">−</span>
+                    </button>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="weight" value="summer">
+                            <span>Summer Armor (250-299 GSM)</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="weight" value="winter">
+                            <span>Winter Armor (300+ GSM)</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>FIT</span>
+                        <span class="toggle-icon">−</span>
+                    </button>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="fit" value="boxy">
+                            <span>Boxy</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="fit" value="oversized">
+                            <span>Oversized</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="fit" value="standard">
+                            <span>Standard</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>PRICE RANGE</span>
+                        <span class="toggle-icon">−</span>
+                    </button>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="0-3000">
+                            <span>Under Rs. 3,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="3000-5000">
+                            <span>Rs. 3,000 - 5,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="5000-8000">
+                            <span>Rs. 5,000 - 8,000</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="price" value="8000+">
+                            <span>Above Rs. 8,000</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-toggle">
+                        <span>AVAILABILITY</span>
+                        <span class="toggle-icon">−</span>
+                    </button>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="availability" value="available">
+                            <span>Available</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="availability" value="archived">
+                            <span>Archived</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- PRODUCT GRID -->
+            <main class="product-grid-container">
+                <div class="grid-controls">
+                    <label class="sort-label">
+                        <span>SORT BY</span>
+                        <select id="sortSelect" class="sort-select">
+                            <option value="default">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-az">Name: A to Z</option>
+                            <option value="name-za">Name: Z to A</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <!-- Products will be dynamically loaded -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="footer-title">DRIP</h3>
+                <p class="footer-tagline">CRAFTED FOR THE EMPIRE.</p>
+                <p class="footer-desc">Heavyweight fabrics, bold aesthetics, and industrial craftsmanship for Pakistan's
+                    streetwear elite.</p>
+                <p
+                    style="margin-top: 30px; font-size: 10px; color: var(--concrete-grey); opacity: 0.5; font-family: 'Space Mono';">
+                    SYSTEM STATUS: ONLINE v1.0</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">Manifesto</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><button onclick="openSizeModal()"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Size
+                            Chart</button></li>
+                    <li><button onclick="openPolicyModal('shipping')"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Shipping
+                            Info</button></li>
+                    <li><button onclick="openPolicyModal('returns')"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Returns
+                            & Policies</button></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONNECT</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+                <p class="footer-contact">+92 335 2723423</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© DRIP 2026 — INDUSTRIAL ROYALTY</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/923352723423" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <!-- MODAL: POLICIES -->
+    <div id="policiesModal" class="glass-modal">
+        <div class="glass-modal-content">
+            <div class="glass-modal-header">
+                <h3 class="glass-modal-title">THE DOSSIER</h3>
+                <button class="btn-dismiss" onclick="closePolicyModal()">[ DISMISS ]</button>
+            </div>
+            <div class="policy-container">
+                <div class="policy-tabs">
+                    <button class="policy-tab-btn active" onclick="openPolicyTab(event, 'returns')">RETURNS</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'payment')">PAYMENT</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'privacy')">PRIVACY</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'shipping')">SHIPPING</button>
+                </div>
+                <div class="policy-content-pane">
+                    <div id="returns" class="policy-text active">
+                        <h4>RETURN PROTOCOL</h4>
+                        <p>We accept returns within 7 days of delivery. Items must be unworn, unwashed, and in original
+                            packaging with tags attached. This is strict. We do not accept returns on used gear.</p>
+                        <p>To initiate a return, contact us via WhatsApp with your Order ID.</p>
+                    </div>
+                    <div id="payment" class="policy-text">
+                        <h4>PAYMENT METHODS</h4>
+                        <p>Cash on Delivery (COD) is available nationwide. Payment is collected upon successful delivery
+                            of your order.</p>
+                        <p>Online transfers are available upon request via our support channel.</p>
+                    </div>
+                    <div id="privacy" class="policy-text">
+                        <h4>DATA PRIVACY</h4>
+                        <p>Your personal information is secure with us. We never share your data with third parties
+                            without your consent. We operate on a need-to-know basis.</p>
+                    </div>
+                    <div id="shipping" class="policy-text">
+                        <h4>LOGISTICS</h4>
+                        <p>Standard delivery takes 3-5 business days within Pakistan.</p>
+                        <p>Rs. 200 flat rate nationwide. Free shipping on orders above Rs. 5,000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: SIZE CHART -->
+    <div id="sizeChartModal" class="glass-modal" style="max-width: 600px;">
+        <div class="glass-modal-content">
+            <div class="glass-modal-header">
+                <h3 class="glass-modal-title">SPECIFICATIONS</h3>
+                <button class="btn-dismiss" onclick="closeSizeModal()">[ DISMISS ]</button>
+            </div>
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>CHEST (IN)</th>
+                        <th>LENGTH (IN)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SMALL</td>
+                        <td>38 - 40</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>MEDIUM</td>
+                        <td>40 - 42</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>LARGE</td>
+                        <td>42 - 44</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>X-LARGE</td>
+                        <td>44 - 46</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>XX-LARGE</td>
+                        <td>46 - 48</td>
+                        <td>31</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top:20px; font-size: 11px; color: var(--empire-gold);">* Measurements may vary by +/- 0.5
+                inches due to manual washing process.</p>
+        </div>
+    </div>
+
+    <!-- MODAL: PROCESSING ORDER -->
+    <div id="processingModal" class="glass-modal progress-modal">
+        <h3 class="glass-modal-title" style="font-size: 18px;">SECURING INVENTORY</h3>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="orderProgressBar"></div>
+        </div>
+        <p style="font-family: 'Space Mono'; font-size: 12px; color: var(--empire-gold);">PLEASE WAIT...</p>
+    </div>
+
+    <!-- QUICK VIEW MODAL (UPDATED) -->
+    <div id="quickViewModal" class="glass-modal">
+        <div class="glass-modal-content" style="display: flex; gap: 30px; height: 100%;">
+            <div style="flex: 1; overflow: hidden; border-radius: 4px;">
+                <img id="modalImage" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <div class="glass-modal-header" style="border-bottom: none; margin-bottom: 10px;">
+                    <h3 id="modalName" class="glass-modal-title" style="font-size: 28px;"></h3>
+                    <button class="btn-dismiss" id="closeModal">[ DISMISS ]</button>
+                </div>
+                <p id="modalPrice"
+                    style="font-size: 20px; color: var(--empire-gold); font-weight: bold; margin-bottom: 20px;"></p>
+                <div id="modalDesc" style="margin-bottom: 20px; color: #ccc; font-size: 13px;"></div>
+
+                <div id="modalSpecs"
+                    style="margin-bottom: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;"></div>
+
+                <div class="modal-actions" style="margin-top: auto;">
+                    <button class="btn-primary" id="modalQuickBuy">SECURE CHECKOUT</button>
+                    <button class="btn-secondary" id="modalWhatsapp">WHATSAPP INQUIRY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+
+</html>
