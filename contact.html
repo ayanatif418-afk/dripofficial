@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — DRIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Space+Mono:wght@400;700&family=Cinzel:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+</head>
+
+<body>
+    <!-- PILL SHAPED NAVIGATION -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-content">
+            <!-- LEFT: MENU TRIGGER -->
+            <button class="menu-trigger" id="menuBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>MENU</span>
+            </button>
+
+            <!-- CENTER: LOGO -->
+            <a href="index.html" class="logo">
+                <img src="driplogo.png" alt="DRIP">
+            </a>
+
+            <!-- RIGHT: ICONS -->
+            <div class="nav-actions">
+                <button class="nav-icon" id="searchBtn" aria-label="Search">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="nav-icon" id="cartBtn" aria-label="My Vault">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-menu" id="closeMenu" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="menu-links">
+            <a href="index.html" class="menu-link" data-text="HOME">HOME</a>
+            <a href="products.html" class="menu-link" data-text="THE VAULT">THE VAULT</a>
+            <a href="about.html" class="menu-link" data-text="THE CRAFT">THE CRAFT</a>
+            <a href="contact.html" class="menu-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="menu-footer">
+            <p>EST. 2026 — KARACHI</p>
+        </div>
+    </div>
+
+    <!-- CART DROPDOWN -->
+    <div id="cartDropdown" class="cart-dropdown">
+        <div class="cart-header">
+            <h3>MY VAULT</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your vault is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>TOTAL:</span>
+                <span id="cartTotal">Rs. 0</span>
+            </div>
+            <button class="btn-primary" id="checkoutBtn">PROCEED TO CHECKOUT</button>
+            <button class="btn-secondary" id="whatsappCheckout">WHATSAPP CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <p class="hero-eyebrow">GET IN TOUCH</p>
+            <h1 class="contact-hero-title">CONNECT WITH<br>THE EMPIRE</h1>
+            <p class="contact-hero-subtitle">FOR INQUIRIES REGARDING BESPOKE ORDERS, WHOLESALE, OR BRAND COLLABORATIONS
+            </p>
+        </div>
+    </section>
+
+    <!-- QUICK CONNECT SECTION -->
+    <section class="quick-connect-section">
+        <div class="quick-connect-container">
+            <h2 class="section-label">INSTANT CONNECTION</h2>
+            <div class="quick-connect-grid">
+                <a href="https://wa.me/923352723423" class="quick-connect-card" target="_blank">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3>WHATSAPP DIRECT</h3>
+                    <p>Fastest response time. Connect directly with our team.</p>
+                    <span class="card-cta">MESSAGE NOW →</span>
+                </a>
+
+                <div class="quick-connect-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                    <h3>EMAIL STUDIO</h3>
+                    <p>studio@drip.com</p>
+                    <span class="card-cta">SEND EMAIL →</span>
+                </div>
+
+                <div class="quick-connect-card">
+                    <div class="card-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>PHONE DIRECT</h3>
+                    <p>+92 335 2723423</p>
+                    <span class="card-cta">CALL NOW →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section class="contact-form-section">
+        <div class="contact-form-container">
+            <div class="form-header">
+                <h2 class="section-title">OFFICIAL INQUIRY</h2>
+                <p class="section-subtitle">Fill out the form below and we'll respond within 24 hours</p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName">FULL NAME *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">EMAIL ADDRESS *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">PHONE NUMBER</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+92 XXX XXXXXXX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">INQUIRY TYPE *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select inquiry type</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="order">Order Support</option>
+                            <option value="custom">Custom/Bespoke Order</option>
+                            <option value="wholesale">Wholesale & Empire Partnerships</option>
+                            <option value="collaboration">Brand Collaboration</option>
+                            <option value="press">Press & Media</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">MESSAGE *</label>
+                    <textarea id="message" name="message" rows="6" placeholder="How can we assist your style journey?"
+                        required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">
+                        SEND MESSAGE
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                    <p class="form-note">By submitting, you agree to receive communications from DRIP.</p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="location-section">
+        <div class="location-container">
+            <div class="location-info">
+                <h2 class="section-title">FLAGSHIP STUDIO</h2>
+                <div class="location-details">
+                    <div class="detail-item">
+                        <h3>ADDRESS</h3>
+                        <p>Karachi, Pakistan</p>
+                        <p class="detail-note">Visit by appointment only</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3>HOURS</h3>
+                        <p>Monday - Saturday: 11:00 AM - 8:00 PM</p>
+                        <p>Sunday: Closed</p>
+                        <p class="detail-note">Extended hours during drop releases</p>
+                    </div>
+
+                    <div class="detail-item">
+                        <h3>DIRECTIONS</h3>
+                        <p>Located in the heart of Karachi's fashion district</p>
+                        <button class="btn-directions">GET DIRECTIONS</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-map">
+                <!-- Placeholder for map -->
+                <div class="map-placeholder">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <p>KARACHI FLAGSHIP</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">COMMON INQUIRIES</h2>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do you offer wholesale partnerships?</h3>
+                    <p>Yes. We work with select retailers who align with our empire aesthetic. Minimum order quantities
+                        and terms are discussed individually. Contact us via the wholesale inquiry option above.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Can I request a custom/bespoke piece?</h3>
+                    <p>Bespoke orders are available for select clients. Lead time is 4-6 weeks depending on complexity.
+                        Contact us with your vision and measurements.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How do I track my order?</h3>
+                    <p>All orders receive tracking information via WhatsApp and email within 24 hours of shipment. You
+                        can also contact us directly for real-time updates.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>What is your return policy?</h3>
+                    <p>We accept returns within 7 days of delivery for unworn items with original tags. Custom/bespoke
+                        pieces are final sale. See our full policy for details.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Do you ship internationally?</h3>
+                    <p>Currently, we ship within Pakistan only. International shipping is planned for Q3 2026. Join our
+                        mailing list for updates.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>How can I collaborate with DRIP?</h3>
+                    <p>We're open to collaborations with artists, designers, and brands that share our vision. Submit a
+                        detailed proposal using the collaboration inquiry option.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: POLICIES -->
+    <div id="policiesModal" class="glass-modal">
+        <div class="glass-modal-content">
+            <div class="glass-modal-header">
+                <h3 class="glass-modal-title">THE DOSSIER</h3>
+                <button class="btn-dismiss" onclick="closePolicyModal()">[ DISMISS ]</button>
+            </div>
+            <div class="policy-container">
+                <div class="policy-tabs">
+                    <button class="policy-tab-btn active" onclick="openPolicyTab(event, 'returns')">RETURNS</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'payment')">PAYMENT</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'privacy')">PRIVACY</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'shipping')">SHIPPING</button>
+                </div>
+                <div class="policy-content-pane">
+                    <div id="returns" class="policy-text active">
+                        <h4>RETURN PROTOCOL</h4>
+                        <p>We accept returns within 7 days of delivery. Items must be unworn, unwashed, and in original
+                            packaging with tags attached. This is strict. We do not accept returns on used gear.</p>
+                        <p>To initiate a return, contact us via WhatsApp with your Order ID.</p>
+                    </div>
+                    <div id="payment" class="policy-text">
+                        <h4>PAYMENT METHODS</h4>
+                        <p>Cash on Delivery (COD) is available nationwide. Payment is collected upon successful delivery
+                            of your order.</p>
+                        <p>Online transfers are available upon request via our support channel.</p>
+                    </div>
+                    <div id="privacy" class="policy-text">
+                        <h4>DATA PRIVACY</h4>
+                        <p>Your personal information is secure with us. We never share your data with third parties
+                            without your consent. We operate on a need-to-know basis.</p>
+                    </div>
+                    <div id="shipping" class="policy-text">
+                        <h4>LOGISTICS</h4>
+                        <p>Standard delivery takes 3-5 business days within Pakistan.</p>
+                        <p>Rs. 200 flat rate nationwide. Free shipping on orders above Rs. 5,000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: SIZE CHART -->
+    <div id="sizeChartModal" class="glass-modal" style="max-width: 600px;">
+        <div class="glass-modal-content">
+            <div class="glass-modal-header">
+                <h3 class="glass-modal-title">SPECIFICATIONS</h3>
+                <button class="btn-dismiss" onclick="closeSizeModal()">[ DISMISS ]</button>
+            </div>
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>CHEST (IN)</th>
+                        <th>LENGTH (IN)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SMALL</td>
+                        <td>38 - 40</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>MEDIUM</td>
+                        <td>40 - 42</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>LARGE</td>
+                        <td>42 - 44</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>X-LARGE</td>
+                        <td>44 - 46</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>XX-LARGE</td>
+                        <td>46 - 48</td>
+                        <td>31</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top:20px; font-size: 11px; color: var(--empire-gold);">* Measurements may vary by +/- 0.5
+                inches due to manual washing process.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="footer-title">DRIP</h3>
+                <p class="footer-tagline">CRAFTED FOR THE EMPIRE.</p>
+                <p class="footer-desc">Heavyweight fabrics, bold aesthetics, and industrial craftsmanship for Pakistan's
+                    streetwear elite.</p>
+                <p
+                    style="margin-top: 30px; font-size: 10px; color: var(--concrete-grey); opacity: 0.5; font-family: 'Space Mono';">
+                    SYSTEM STATUS: ONLINE v1.0</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">Manifesto</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><button onclick="openSizeModal()"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Size
+                            Chart</button></li>
+                    <li><button onclick="openPolicyModal('shipping')"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Shipping
+                            Info</button></li>
+                    <li><button onclick="openPolicyModal('returns')"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Returns
+                            & Policies</button></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONNECT</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+                <p class="footer-contact">+92 335 2723423</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© DRIP 2026 — INDUSTRIAL ROYALTY</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923352723423" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="contact.js"></script>
+</body>
+
+</html>

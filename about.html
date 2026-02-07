@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Craft — DRIP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Space+Mono:wght@400;700&family=Cinzel:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about-styles.css">
+</head>
+
+<body>
+    <!-- PILL SHAPED NAVIGATION -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-content">
+            <!-- LEFT: MENU TRIGGER -->
+            <button class="menu-trigger" id="menuBtn">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>MENU</span>
+            </button>
+
+            <!-- CENTER: LOGO -->
+            <a href="index.html" class="logo">
+                <img src="driplogo.png" alt="DRIP">
+            </a>
+
+            <!-- RIGHT: ICONS -->
+            <div class="nav-actions">
+                <button class="nav-icon" id="searchBtn" aria-label="Search">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="nav-icon" id="cartBtn" aria-label="My Vault">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-menu" id="closeMenu" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="menu-links">
+            <a href="index.html" class="menu-link" data-text="HOME">HOME</a>
+            <a href="products.html" class="menu-link" data-text="THE VAULT">THE VAULT</a>
+            <a href="about.html" class="menu-link" data-text="THE CRAFT">THE CRAFT</a>
+            <a href="contact.html" class="menu-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="menu-footer">
+            <p>EST. 2026 — KARACHI</p>
+        </div>
+    </div>
+
+    <!-- CART DROPDOWN -->
+    <div id="cartDropdown" class="cart-dropdown">
+        <div class="cart-header">
+            <h3>MY VAULT</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your vault is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>TOTAL:</span>
+                <span id="cartTotal">Rs. 0</span>
+            </div>
+            <button class="btn-primary" id="checkoutBtn">PROCEED TO CHECKOUT</button>
+            <button class="btn-secondary" id="whatsappCheckout">WHATSAPP CHECKOUT</button>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="about-hero-content">
+            <p class="hero-eyebrow">EST. 2026 — KARACHI</p>
+            <h1 class="about-hero-title">THE CRAFT<br>OF THE EMPIRE</h1>
+            <p class="about-hero-subtitle">INDUSTRIAL PRECISION. TIMELESS FASHION.</p>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>SCROLL</span>
+            <svg width="12" height="24" viewBox="0 0 12 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 4L6 20M6 20L2 16M6 20L10 16"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ORIGIN STORY -->
+    <section class="story-section">
+        <div class="story-container">
+            <div class="story-header">
+                <span class="section-eyebrow">CHAPTER I</span>
+                <h2 class="section-title">BEYOND THE HANGER</h2>
+            </div>
+
+            <div class="story-content">
+                <p class="story-lead">
+                    Founded on the principle that fashion is an industrial art, DRIP was born from the
+                    clatter of the loom and the weight of the steel shear.
+                </p>
+
+                <p class="story-body">
+                    Like the humble hanger—a physical necessity of the wardrobe—our brand serves as the
+                    essential foundation for the modern Pakistani individual. We are not in the business
+                    of trends. We are in the business of permanence.
+                </p>
+
+                <p class="story-body">
+                    Every stitch is a decision. Every fabric is a commitment. Every piece is built to
+                    outlast the season, the year, the decade. This is not clothing. This is armor
+                    for the empire you are building.
+                </p>
+
+                <div class="story-quote">
+                    <blockquote>
+                        "We believe in the raw beauty of production. Our designs reflect the strength
+                        of architectural lines and the honesty of raw textiles."
+                    </blockquote>
+                    <cite>— DRIP ATELIER</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY GRID -->
+    <section class="philosophy-section">
+        <div class="philosophy-container">
+            <div class="philosophy-header">
+                <span class="section-eyebrow">OUR PILLARS</span>
+                <h2 class="section-title">THE EMPIRE STANDARD</h2>
+            </div>
+
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="card-number">01</div>
+                    <h3 class="card-title">INDUSTRIAL INTEGRITY</h3>
+                    <p class="card-desc">
+                        We believe in the raw beauty of production. Our designs reflect the strength
+                        of architectural lines and the honesty of raw textiles. No shortcuts. No
+                        compromises. Only the weight of quality.
+                    </p>
+                    <div class="card-specs">
+                        <span>300+ GSM MINIMUM</span>
+                        <span>MANUAL CRAFT</span>
+                        <span>LIMITED BATCHES</span>
+                    </div>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="card-number">02</div>
+                    <h3 class="card-title">THE EMPIRE AESTHETIC</h3>
+                    <p class="card-desc">
+                        Tailoring that commands respect. We merge heritage craftsmanship with a
+                        minimalist, luxury silhouette designed for the global stage. Every piece
+                        is engineered for dominance.
+                    </p>
+                    <div class="card-specs">
+                        <span>BOXY CUTS</span>
+                        <span>OVERSIZED FIT</span>
+                        <span>ARCHITECTURAL LINES</span>
+                    </div>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="card-number">03</div>
+                    <h3 class="card-title">SCARCITY BY DESIGN</h3>
+                    <p class="card-desc">
+                        We do not restock. Once a drop sells out, it enters the archive. This is
+                        not artificial scarcity—this is the natural consequence of manual craft
+                        and limited production capacity.
+                    </p>
+                    <div class="card-specs">
+                        <span>NO RESTOCKS</span>
+                        <span>ARCHIVE ONLY</span>
+                        <span>ONE BATCH</span>
+                    </div>
+                </div>
+
+                <div class="philosophy-card">
+                    <div class="card-number">04</div>
+                    <h3 class="card-title">PAKISTAN FIRST</h3>
+                    <p class="card-desc">
+                        Built in Karachi. Crafted for the empire. We are establishing a new standard
+                        for Pakistani streetwear—one that refuses to compromise on quality, design,
+                        or execution.
+                    </p>
+                    <div class="card-specs">
+                        <span>LOCAL CRAFT</span>
+                        <span>GLOBAL STANDARD</span>
+                        <span>EMPIRE VISION</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="process-section">
+        <div class="process-container">
+            <div class="process-header">
+                <span class="section-eyebrow">CHAPTER II</span>
+                <h2 class="section-title">THE INDUSTRIAL METHOD</h2>
+            </div>
+
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                        <span class="marker-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>MATERIAL SELECTION</h3>
+                        <p>
+                            We source only heavyweight fabrics exceeding 300 GSM. Each textile is
+                            tested for durability, weight, and drape. Only the finest materials
+                            make it to the cutting table.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                        <span class="marker-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>PATTERN ENGINEERING</h3>
+                        <p>
+                            Our patterns are architectural blueprints. Every measurement is
+                            calculated for the Empire fit—oversized without being loose,
+                            structured without being rigid.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                        <span class="marker-line"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>MANUAL FINISHING</h3>
+                        <p>
+                            Acid washes are done by hand. Distressing is individual. No two
+                            pieces are identical. This is where mass production ends and
+                            craft begins.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <span class="marker-dot"></span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>QUALITY INSPECTION</h3>
+                        <p>
+                            Every piece undergoes final inspection. Stitching, weight, finish,
+                            and fit are verified. Only garments that meet the Empire standard
+                            receive the DRIP label.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto-section">
+        <div class="manifesto-container">
+            <div class="manifesto-content">
+                <h2 class="manifesto-title">THE MANIFESTO</h2>
+                <div class="manifesto-text">
+                    <p>We choose craft over trends.</p>
+                    <p>Status over volume.</p>
+                    <p>Scarcity over mass production.</p>
+                    <p>Quality over everything.</p>
+                </div>
+                <p class="manifesto-tagline">CRAFTED FOR THE EMPIRE.</p>
+                <a href="products.html" class="btn-manifesto">EXPLORE THE VAULT</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL: POLICIES -->
+    <div id="policiesModal" class="glass-modal">
+        <div class="glass-modal-content">
+            <div class="glass-modal-header">
+                <h3 class="glass-modal-title">THE DOSSIER</h3>
+                <button class="btn-dismiss" onclick="closePolicyModal()">[ DISMISS ]</button>
+            </div>
+            <div class="policy-container">
+                <div class="policy-tabs">
+                    <button class="policy-tab-btn active" onclick="openPolicyTab(event, 'returns')">RETURNS</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'payment')">PAYMENT</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'privacy')">PRIVACY</button>
+                    <button class="policy-tab-btn" onclick="openPolicyTab(event, 'shipping')">SHIPPING</button>
+                </div>
+                <div class="policy-content-pane">
+                    <div id="returns" class="policy-text active">
+                        <h4>RETURN PROTOCOL</h4>
+                        <p>We accept returns within 7 days of delivery. Items must be unworn, unwashed, and in original
+                            packaging with tags attached. This is strict. We do not accept returns on used gear.</p>
+                        <p>To initiate a return, contact us via WhatsApp with your Order ID.</p>
+                    </div>
+                    <div id="payment" class="policy-text">
+                        <h4>PAYMENT METHODS</h4>
+                        <p>Cash on Delivery (COD) is available nationwide. Payment is collected upon successful delivery
+                            of your order.</p>
+                        <p>Online transfers are available upon request via our support channel.</p>
+                    </div>
+                    <div id="privacy" class="policy-text">
+                        <h4>DATA PRIVACY</h4>
+                        <p>Your personal information is secure with us. We never share your data with third parties
+                            without your consent. We operate on a need-to-know basis.</p>
+                    </div>
+                    <div id="shipping" class="policy-text">
+                        <h4>LOGISTICS</h4>
+                        <p>Standard delivery takes 3-5 business days within Pakistan.</p>
+                        <p>Rs. 200 flat rate nationwide. Free shipping on orders above Rs. 5,000.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: SIZE CHART -->
+    <div id="sizeChartModal" class="glass-modal" style="max-width: 600px;">
+        <div class="glass-modal-content">
+            <div class="glass-modal-header">
+                <h3 class="glass-modal-title">SPECIFICATIONS</h3>
+                <button class="btn-dismiss" onclick="closeSizeModal()">[ DISMISS ]</button>
+            </div>
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>SIZE</th>
+                        <th>CHEST (IN)</th>
+                        <th>LENGTH (IN)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SMALL</td>
+                        <td>38 - 40</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>MEDIUM</td>
+                        <td>40 - 42</td>
+                        <td>28</td>
+                    </tr>
+                    <tr>
+                        <td>LARGE</td>
+                        <td>42 - 44</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <td>X-LARGE</td>
+                        <td>44 - 46</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>XX-LARGE</td>
+                        <td>46 - 48</td>
+                        <td>31</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top:20px; font-size: 11px; color: var(--empire-gold);">* Measurements may vary by +/- 0.5
+                inches due to manual washing process.</p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="footer-title">DRIP</h3>
+                <p class="footer-tagline">CRAFTED FOR THE EMPIRE.</p>
+                <p class="footer-desc">Heavyweight fabrics, bold aesthetics, and industrial craftsmanship for Pakistan's
+                    streetwear elite.</p>
+                <p
+                    style="margin-top: 30px; font-size: 10px; color: var(--concrete-grey); opacity: 0.5; font-family: 'Space Mono';">
+                    SYSTEM STATUS: ONLINE v1.0</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">Manifesto</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><button onclick="openSizeModal()"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Size
+                            Chart</button></li>
+                    <li><button onclick="openPolicyModal('shipping')"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Shipping
+                            Info</button></li>
+                    <li><button onclick="openPolicyModal('returns')"
+                            style="color: inherit; text-transform: none; letter-spacing: inherit; font-size: inherit;">Returns
+                            & Policies</button></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONNECT</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="Twitter">TW</a>
+                </div>
+                <p class="footer-contact">+92 335 2723423</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© DRIP 2026 — INDUSTRIAL ROYALTY</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

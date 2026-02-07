@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIP — SECURE CHECKOUT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@800;900&family=Space+Mono:wght@400;700&family=Cinzel:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .checkout-container {
+            padding: 140px 5% 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .checkout-grid {
+            display: grid;
+            grid-template-columns: 1fr 450px;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        .checkout-section {
+            background: var(--industrial-glass);
+            backdrop-filter: var(--glass-blur);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .checkout-title {
+            font-size: 24px;
+            letter-spacing: 0.2em;
+            margin-bottom: 30px;
+            color: var(--empire-gold);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            color: var(--brushed-silver);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            color: white;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--empire-gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        /* ORDER SUMMARY STYLES */
+        .order-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .order-item-img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .order-item-info {
+            flex: 1;
+        }
+
+        .order-item-name {
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            margin-bottom: 5px;
+        }
+
+        .order-item-price {
+            color: var(--empire-gold);
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .size-selector-mini {
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--concrete-grey);
+            font-size: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        .summary-totals {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+        }
+
+        .summary-row.grand-total {
+            margin-top: 20px;
+            font-size: 20px;
+            color: var(--empire-gold);
+            font-weight: 700;
+        }
+
+        /* SUGGESTIONS */
+        .suggestions-title {
+            font-size: 14px;
+            letter-spacing: 0.3em;
+            color: var(--empire-gold);
+            margin-top: 50px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .suggestion-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .suggestion-card:hover {
+            border-color: var(--empire-gold);
+            transform: translateY(-5px);
+        }
+
+        .suggestion-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .suggestion-name {
+            font-size: 12px;
+            margin-bottom: 8px;
+            letter-spacing: 0.1em;
+        }
+
+        .btn-add-mini {
+            width: 100%;
+            padding: 10px;
+            font-size: 10px;
+            background: transparent;
+            border: 1px solid var(--empire-gold);
+            color: var(--empire-gold);
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .btn-add-mini:hover {
+            background: var(--empire-gold);
+            color: black;
+        }
+
+        @media (max-width: 968px) {
+            .checkout-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkout-container {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- GLOBAL WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/923352723423" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+    </a>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-menu" id="closeMenu" aria-label="Close Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="menu-links">
+            <a href="index.html" class="menu-link" data-text="HOME">HOME</a>
+            <a href="products.html" class="menu-link" data-text="THE VAULT">THE VAULT</a>
+            <a href="about.html" class="menu-link" data-text="THE CRAFT">THE CRAFT</a>
+            <a href="contact.html" class="menu-link" data-text="CONTACT">CONTACT</a>
+        </div>
+        <div class="menu-footer">
+            <p>EST. 2026 — KARACHI</p>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="navbar scrolled" id="navbar">
+        <div class="nav-content">
+            <button class="menu-trigger" id="menuBtn">
+                <div class="hamburger"><span></span><span></span></div>
+                <span>MENU</span>
+            </button>
+            <a href="index.html" class="logo"><img src="driplogo.png" alt="DRIP"></a>
+            <div class="nav-actions">
+                <button class="nav-icon" id="cartBtn">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="checkout-container">
+        <div class="checkout-grid">
+            <!-- LEFT: DETAILS -->
+            <div class="checkout-left">
+                <div class="checkout-section">
+                    <h2 class="checkout-title">1. CONTACT INFORMATION</h2>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="empire@example.com" id="email">
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2 class="checkout-title">2. SHIPPING ADDRESS</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="John" id="fName">
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Doe" id="lName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <input type="text" placeholder="P.O. Box 777, Street 12, DHA Phase 6" id="address">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" placeholder="Karachi" id="city">
+                        </div>
+                        <div class="form-group">
+                            <label>WhatsApp / Phone</label>
+                            <input type="tel" placeholder="+92 3XX XXXXXXX" id="phone">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-section">
+                    <h2 class="checkout-title">3. PAYMENT METHOD</h2>
+                    <p style="font-family: 'Space Mono'; font-size: 13px; color: var(--brushed-silver);">
+                        [ CASH ON DELIVERY ] — Pay when your order arrives.
+                    </p>
+                </div>
+
+                <button class="btn-primary" id="placeOrderBtn" style="width: 100%; padding: 20px; font-size: 16px;">
+                    CONFIRM ORDER
+                </button>
+            </div>
+
+            <!-- RIGHT: SUMMARY -->
+            <div class="checkout-right">
+                <div class="checkout-section" id="summaryContainer">
+                    <h2 class="checkout-title">UNITS SECURED</h2>
+                    <div id="checkoutItems">
+                        <!-- Items rendered here -->
+                    </div>
+
+                    <div class="summary-totals">
+                        <div class="summary-row">
+                            <span>SUBTOTAL:</span>
+                            <span id="summarySubtotal">Rs. 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>SHIPPING (DRIP LOGISTICS):</span>
+                            <span id="summaryShipping">Rs. 0</span>
+                        </div>
+                        <div class="summary-row grand-total">
+                            <span>TOTAL:</span>
+                            <span id="summaryTotal">Rs. 0</span>
+                        </div>
+                        <p id="freeShippingNotice"
+                            style="font-size: 10px; color: var(--empire-gold); margin-top: 10px; font-family: 'Space Mono'; text-align: center; display: none;">
+                            * FREE SHIPPING APPLIED (ORDER > RS. 5000)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="suggestions-container">
+                    <h3 class="suggestions-title">YOU MIGHT ALSO NEED</h3>
+                    <div class="suggestions-grid" id="suggestionItems">
+                        <!-- Suggestions rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3 class="footer-title">DRIP</h3>
+                <p class="footer-tagline">CRAFTED FOR THE EMPIRE.</p>
+                <p class="footer-desc">Heavyweight fabrics, bold aesthetics, and industrial craftsmanship for Pakistan's
+                    streetwear elite.</p>
+                <p
+                    style="margin-top: 30px; font-size: 10px; color: var(--concrete-grey); opacity: 0.5; font-family: 'Space Mono';">
+                    SYSTEM STATUS: ONLINE v1.0</p>
+            </div>
+            <div class="footer-col">
+                <h4>NAVIGATION</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">Manifesto</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CONNECT</h4>
+                <div class="social-links">
+                    <a href="#">IG</a>
+                    <a href="#">FB</a>
+                    <a href="#">TW</a>
+                </div>
+                <p class="footer-contact">+92 335 2723423</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© DRIP 2026 — INDUSTRIAL ROYALTY</p>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>
